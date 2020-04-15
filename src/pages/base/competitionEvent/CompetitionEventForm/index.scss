@@ -1,0 +1,22 @@
+/*
+ * @Description: 比赛项目管理样式单
+ * @Author: 周健平
+ * @department: 山东大学
+ * @Date: 2020-04-07 19:11:00
+ * @LastEditors: Do not Edit
+ * @LastEditTime: 2020-04-12 11:41:30
+ */
+@import '@/styles/common.scss';
+
+@include tableFilter;
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  // 修改输入框长度
+  :global {
+    .ant-form-item {
+      width: 80%;
+    }
+  }
+}

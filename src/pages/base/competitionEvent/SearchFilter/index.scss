@@ -1,0 +1,22 @@
+/*
+ * @Description: 查询比赛项目样式单
+ * @Author: 周健平
+ * @department: 山东大学
+ * @Date: 2020-04-07 19:11:21
+ * @LastEditors: Do not Edit
+ * @LastEditTime: 2020-04-09 17:14:21
+ */
+@import '@/styles/common.scss';
+
+@include tableFilter;
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+
+  :global {
+    .ant-form-item {
+      widows: 80px;
+    }
+  }
+}
