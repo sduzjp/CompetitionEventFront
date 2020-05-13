@@ -4,18 +4,19 @@
  * @department: 山东大学
  * @Date: 2020-04-07 19:11:08
  * @LastEditors: Do not Edit
- * @LastEditTime: 2020-04-12 11:42:59
+ * @LastEditTime: 2020-05-13 20:52:25
  */
 import * as React from 'react';
 import Form, { FormComponentProps } from 'antd/lib/form';
 import { FILTER_FORM_LAYOUT } from '@/constant';
-import { Input } from 'antd';
+import { Input, Select } from 'antd';
 import styles from './index.scss';
 
 import { compose, withState } from 'recompose';
 import { CompetitionEventEdit } from '@/interfaces/competitionEvent';
 import ModalButtons from '@/components/ModalButtons';
 
+const { Option } = Select;
 export interface UserFormProps extends FormComponentProps {
   saving: boolean;
   detailData?: CompetitionEventEdit;
@@ -88,7 +89,14 @@ class UserForm extends React.PureComponent<UserFormProps> {
                 message: '请输入比赛项目组别',
               },
             ],
-          })(<Input placeholder="1:成年组,2:青少年组,3:老年组" />)}
+          })(
+            <Select placeholder="请输入比赛项目组别">
+              <Option value={1}>1:成年组</Option>
+              <Option value={2}>2:青少年组</Option>
+              <Option value={3}>3:老年组</Option>
+            </Select>,
+          )}
+          {/* (<Input placeholder="1:成年组,2:青少年组,3:老年组" />)} */}
         </Form.Item>
 
         <Form.Item label="状态" {...FILTER_FORM_LAYOUT}>
@@ -99,7 +107,14 @@ class UserForm extends React.PureComponent<UserFormProps> {
                 message: '请输入比赛项目状态',
               },
             ],
-          })(<Input placeholder="1:未开始,2:进行中,3:已结束" />)}
+          })(
+            <Select placeholder="请输入比赛项目状态">
+              <Option value={1}>1:未开始</Option>
+              <Option value={2}>2:进行中</Option>
+              <Option value={3}>3:已结束</Option>
+            </Select>,
+          )}
+          {/* (<Input placeholder="1:未开始,2:进行中,3:已结束" />)} */}
         </Form.Item>
 
         <Form.Item label="创建人" {...FILTER_FORM_LAYOUT}>
